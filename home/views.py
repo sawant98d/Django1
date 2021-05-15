@@ -1,7 +1,12 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse
 
 def index(request):
-    return HttpResponse('This is home page')
+    #return HttpResponse('This is home page')
+    context = {
+        'variable1':"Maharashtra is state",
+        'variable2':"India is country"
+    }
+    return render(request, 'index.html', context)
 
 def about(request):
     return HttpResponse('This is about page')
